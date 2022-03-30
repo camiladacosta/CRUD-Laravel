@@ -15,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClienteController;
 
-//rotas das requisições
+//ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
-Route::get('/cliente/criar', [ClienteController::class, 'criar']);
+Route::get('/cliente/create', [ClienteController::class, 'create']);
+
+/**
+ * store -> MÉTODO/ACTION PADRÃO PARA ADICIONAR OS DADOS NO BANCO
+ */
+Route::post('cliente/', [ClienteController::class, 'store']);
 
 Route::get('/listar', function () {
     return view('listar');

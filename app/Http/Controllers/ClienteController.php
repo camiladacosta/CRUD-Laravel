@@ -16,8 +16,31 @@ class ClienteController extends Controller
         return view('welcome',['cliente' => $cliente]);
     }
 
-    //action para criar novo cliente
-    public function criar(){
-        return view('cliente.criar');
+    /**
+     * create-> MÉTODO/ACTION PADRÃO PARA CRIAR NOVO CAMPO (CLIENTE)
+     */
+    public function create(){
+        return view('cliente.create');
+    }
+
+    public function store(Request $request){
+        /**
+         * INSTANCIANDO A CLASSE Cliente DO MODEL
+         */
+        $cliente = new Cliente;
+
+        $cliente-> nome = $request->nome;
+        $cliente-> cpf = $request->cpf;
+        $cliente-> email = $request->email;
+        $cliente-> nacionalidade = $request->nacionalidade;
+        $cliente-> endereco = $request->endereco;
+        $cliente-> profissao = $request->profissao;
+
+        /**
+         * SALVAR OS DADOS PEGOS DA VIEW NO BANCO
+         */
+        $cliente->save();
+
+        return redirect('/')->with('msg', 'Cliente Cadastrado com Sucesso!');
     }
 }

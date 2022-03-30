@@ -21,7 +21,7 @@
                             <a href="/" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/cliente/criar" class="nav-link">Novo Cliente</a>
+                            <a href="/cliente/create" class="nav-link">Novo Cliente</a>
                         </li>
                         <li class="nav-item">
                             <a href="/listar" class="nav-link">Listar</a>
@@ -34,8 +34,20 @@
             </nav>
         </header>
 
-        {{-- yield = diretiva que determina a area do conteúdo --}}
-        @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    {{-- FLASH MESSAGES --}}
+                    @if(session('msg'))
+                        <p class="msg">{{ session('msg') }}</p>
+                    @endif
+
+                    {{-- yield = diretiva que determina a area do conteúdo --}}
+                    @yield('content')
+                </div>
+            </div>
+        </main>
+
         <footer>
             <p>MeuCrud &copy; 2022</p>
         </footer>

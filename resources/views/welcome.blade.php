@@ -9,9 +9,12 @@
 
     <div id="search-container" class="col-md-12">
         <h1>Home</h1>
+        <div class="campo">
         <form action="">
             <input type="text" name="" id="search" class="form-control" placeholder="Busque um Cliente">
+            <input type="submit" id="botao-pesquisar" class="btn btn-primary" value="Buscar">
         </form>
+        </div>
     </div>
     <div id="clientes-container" class="col-md-12">
         <h2>Lista</h2>

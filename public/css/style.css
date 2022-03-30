@@ -14,6 +14,15 @@ header{
     background-color: #FFF;
     border-bottom: 1px solid #ccc;
 }
+.msg{
+    background-color: #d4edda;
+    color:#155724;
+    border: 1px solid;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+}
 
 .row{
     margin: 0;
@@ -42,11 +51,19 @@ header{
 #search-container{
     /* TOP RIGHT BOTTOM E LEFT */
     padding: 20px 0px 0px 50px;
-    width: 400px;
+    width: 600px;
 }
-
+/* CAMPO DE PESQUISA */
 #search{
     width: 300px;
+}
+.campo{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#botao-pesquisar{
+    margin-top: 5px;
 }
 
 /* CLIENTES LIST */
