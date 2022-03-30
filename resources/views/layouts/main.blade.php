@@ -14,7 +14,7 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="/img/logo.png" alt="logo" width="50px">
+                        <img src="/img/logo.png" alt="logo" width="40px">
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
