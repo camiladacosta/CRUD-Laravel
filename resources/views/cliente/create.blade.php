@@ -6,7 +6,7 @@
 
 {{-- selectiona o paramentro de content, dentro da section até o final--}}
 @section('content')
-
+    {{-- PÁGINA DE CADASTRO DE CLIENTE --}}
     <div id="criar-cliente-container" class="col-md-6 offset-md-3">
         <h1>Cadastrar Cliente</h1>
         <form action="/cliente" method="POST">
@@ -29,7 +29,11 @@
             </div>
             <div class="form-group">
                 <label for="title">Endereço:</label>
-                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço do Cliente">
+                <input type="text" class="form-control" id="endereco_id" name="endereco_id" placeholder="Endereço do Cliente">
+            </div>
+            <div class="form-group">
+                <label for="title">Telefone:</label>
+                <input type="text" class="form-control" id="telefone_id" name="telefone_id" placeholder="Telefone do Cliente">
             </div>
             <div class="form-group">
                 <label for="title">Profissão:</label>

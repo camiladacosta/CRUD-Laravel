@@ -33,7 +33,8 @@ class ClienteController extends Controller
         $cliente-> cpf = $request->cpf;
         $cliente-> email = $request->email;
         $cliente-> nacionalidade = $request->nacionalidade;
-        $cliente-> endereco = $request->endereco;
+        $cliente-> endereco_id = $request->endereco_id;
+        $cliente-> telefone_id = $request->telefone_id;
         $cliente-> profissao = $request->profissao;
 
         /**

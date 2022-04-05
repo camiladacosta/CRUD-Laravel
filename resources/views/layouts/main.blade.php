@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <!-- CSS - pasta public-->
         <link rel="stylesheet" href="/css/style.css">
 
@@ -20,11 +20,24 @@
                         <li class="nav-item">
                             <a href="/" class="nav-link">Home</a>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Dropdown link
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="/">Action</a>
+                              <a class="dropdown-item" href="/">Another action</a>
+                              <a class="dropdown-item" href="/">Something else here</a>
+                            </div>
+                          </li>
                         <li class="nav-item">
                             <a href="/cliente/create" class="nav-link">Novo Cliente</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/listar" class="nav-link">Listar</a>
+                            <a href="/endereco/create" class="nav-link">Novo Endereço</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/telefone/create" class="nav-link">Novo Telefone</a>
                         </li>
                         <li class="nav-item">
                             <a href="/listar/1" class="nav-link">Listar ID</a>
@@ -51,6 +64,8 @@
         <footer>
             <p>MeuCrud &copy; 2022</p>
         </footer>
+        <script src='http://code.jquery.com/jquery-3.6.0.min.js'></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <!--IonIcons-->
         <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
         <!--script da pasta public-->

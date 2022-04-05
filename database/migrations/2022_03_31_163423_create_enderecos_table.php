@@ -13,16 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
+        Schema::create('enderecos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("nome");
-            $table->string("cpf");
-            $table->string("email");
-            $table->string("nacionalidade");
-            //$table->string("endereco");
-            //$table->foreignId("endereco_id")->constrained();
-            $table->string("profissao");
+            $table->string("cep");
+            $table->string("logradouro");
+            $table->string("numero");
+            $table->string("complemento");
+            $table->string("bairro");
+            $table->string("cidade");
+            $table->string("estado");
         });
     }
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cliente');
+        Schema::dropIfExists('enderecos');
     }
 };

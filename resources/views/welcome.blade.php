@@ -26,7 +26,8 @@
                         <p>CPF: {{ $cliente-> cpf }}</p>
                         <p>Email: {{ $cliente-> email }}</p>
                         <p>Nacionalidade: {{ $cliente-> nacionalidade }}</p>
-                        <p>Endereço: {{ $cliente-> endereco }}</p>
+                        <p>Endereço: {{ $cliente-> endereco_id }}</p>
+                        <p>Telefone: {{ $cliente-> telefone_id }}</p>
                         <p>Profissão: {{ $cliente-> profissao }}</p>
                     </div>
                 </div>

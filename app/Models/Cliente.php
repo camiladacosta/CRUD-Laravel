@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Cliente extends Model
 {
-    protected $table = "cliente";
+   // protected $table = "cliente";
     use HasFactory;
+
+    // public function endereco(){
+    //     return $this->belongsTo('App\Model\Endereco');
+    // }
 }

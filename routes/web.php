@@ -14,15 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\TelefoneController;
+
 
 //ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
 Route::get('/cliente/create', [ClienteController::class, 'create']);
 
 /**
+ * ENDEREÇO
+ */
+Route::get('/endereco/create', [EnderecoController::class, 'create']);
+
+/**
+ * TELEFONE
+ */
+Route::get('/telefone/create', [TelefoneController::class, 'create']);
+
+/**
  * store -> MÉTODO/ACTION PADRÃO PARA ADICIONAR OS DADOS NO BANCO
  */
 Route::post('cliente/', [ClienteController::class, 'store']);
+Route::post('endereco/', [EnderecoController::class, 'store']);
+Route::post('telefone/', [TelefoneController::class, 'store']);
 
 Route::get('/listar', function () {
     return view('listar');
