@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('orcamentos', function (Blueprint $table) {
-            //
+            $table->foreignId('cliente_id')->constrained();
         });
     }
 
@@ -26,7 +26,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('orcamentos', function (Blueprint $table) {
-            //
+            $table->foreignId('cliente_id')->constrained()->onDelete('cascade');
         });
     }
 };

@@ -46,6 +46,11 @@ Route::get('/cliente/{id}', [ClienteController::class, 'show']);
 Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 
+/**
+ * show -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
+ */
+Route::delete('/produto{id}', [ProdutoController::class, 'destroy']);
+
 Route::get('/listar', function () {
     return view('listar');
 });

@@ -48,4 +48,11 @@ class ProdutoController extends Controller
         $produto = Produto::findOrFail($id);
         return view('produto.show', ['produto' => $produto]);
     }
+
+    /*Método delete*/
+    public function destroy($id)
+    {
+        Produto::findOrFail($id)->delete();
+        return redirect('/produto/showall')->with('msg', 'Evento excluido');
+    }
 }
