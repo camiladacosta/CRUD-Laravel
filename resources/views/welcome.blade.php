@@ -36,14 +36,7 @@
             @endforeach
         </div>
     </div>
-    <!--
-                <div id="produtos-container" class="col-md-12">
-                    <h2>Lista de Produtos</h2>
-                    <div id="cards-container" class="row">
-                        <div id="cards-container" class="row">
 
-                        </div>
-                    </div>
-                </div>
-            -->
+
+
 @endsection

@@ -8,11 +8,11 @@ use App\Models\Produto;
 class ProdutoController extends Controller
 {
 
-    public function index()
+    public function showall()
     {
         $produto = Produto::all();
 
-        return view('welcome', ['produto' => $produto]);
+        return view('produto/showall', ['produto' => $produto]);
     }
 
     public function create()
@@ -31,6 +31,6 @@ class ProdutoController extends Controller
         $produto->valor = $request->valor;
 
         $produto->save();
-        return redirect('/')->with('msg', 'Produto Cadastrado');
+        return redirect('/produto/showall')->with('msg', 'Cliente Cadastrado com Sucesso!');
     }
 }

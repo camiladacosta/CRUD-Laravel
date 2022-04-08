@@ -20,6 +20,7 @@ use App\Http\Controllers\ProdutoController;
 
 //ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
+Route::get('/produto/showall', [ProdutoController::class, 'showall']);
 
 /**
  * create -> MÉTODO/ACTION PADRÃO PARA INSERIR OS DADOS NO BANCO

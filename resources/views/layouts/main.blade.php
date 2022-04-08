@@ -27,7 +27,10 @@
                         <a href="/cliente/create" class="nav-link">Novo Cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/produto/create" class="nav-link">Novo Produto</a>
+                        <a href="/produto/showall" class="nav-link">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/orcamento/showall" class="nav-link">Orçamentos</a>
                     </li>
                     <li class="nav-item">
                         <a href="/endereco/create" class="nav-link">Novo Endereço</a>
