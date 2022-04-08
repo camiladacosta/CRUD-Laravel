@@ -83,6 +83,15 @@ header{
     border-radius: 10px;
 }
 
+/*Produtos List*/
+#produtos-container{
+    padding: 50px;
+}
+
+#produtos-container h2{
+    margin-bottom: 10px;
+}
+
 /* FOOTER */
 footer{
     text-align: center;

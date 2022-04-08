@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
-use App\Http\Controllers\TelefoneController;
+use App\Http\Controllers\ProdutoController;
 
 
 //ROTAS DAS REQUISIÇÕES
@@ -26,23 +26,28 @@ Route::get('/', [ClienteController::class, 'index']);
  */
 Route::get('/cliente/create', [ClienteController::class, 'create']);
 Route::get('/endereco/create', [EnderecoController::class, 'create']);
+Route::get('/produto/create', [ProdutoController::class, 'create']);
 
 /**
  * store -> MÉTODO/ACTION PADRÃO PARA ADICIONAR OS DADOS NO BANCO
  */
 Route::post('cliente/', [ClienteController::class, 'store']);
 Route::post('endereco/', [EnderecoController::class, 'store']);
+Route::post('produto/', [ProdutoController::class, 'store']);
 
-/** show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS */
+/**
+ * show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS
+ */
 Route::get('/cliente/{id}', [ClienteController::class, 'show']);
 Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
+Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 
 Route::get('/listar', function () {
     return view('listar');
 });
 
 Route::get('/listar/{id}', function ($id) {
-    return view('listarid',[
+    return view('listarid', [
         'id' => $id
     ]);
 });
