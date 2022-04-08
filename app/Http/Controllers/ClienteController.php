@@ -9,50 +9,53 @@ use App\Controllers\EnderecoController;
 
 class ClienteController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         /**
          * Pesquisar por id
-        */
+         */
         $endereco = request('endereco');
 
         $search = request('search');
-        if($search){
-            $cliente = Cliente::where('nome','like','%'.$search.'%')->get();//get para pegar o registo
-        }else{
+        if ($search) {
+            $cliente = Cliente::where('nome', 'like', '%' . $search . '%')->get(); //get para pegar o registo
+        } else {
             $cliente = Cliente::all();
         }
 
         /**
          * ENVIANDO PARA A VIEW / = 'welcome' TODOS OS CLIENTES DO BANCO
          */
-        return view('welcome',['cliente' => $cliente, 'search' => $search, 'endereco' => $endereco]);
+        return view('welcome', ['cliente' => $cliente, 'search' => $search, 'endereco' => $endereco]);
     }
 
     /**
      * create-> MÉTODO/ACTION PADRÃO PARA CRIAR NOVO CAMPO (CLIENTE)
      */
-    public function create(){
+    public function create()
+    {
         return view('cliente.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         /**
          * INSTANCIANDO A CLASSE Cliente DO MODEL
          */
         $cliente = new Cliente;
         $endereco = new Endereco;
 
-        $cliente-> nome = $request->nome;
-        $cliente-> cpf = $request->cpf;
-        $cliente-> email = $request->email;
-        $cliente-> nacionalidade = $request->nacionalidade;
-        $cliente-> endereco_id = $request->endereco_id;
-        $cliente-> telefone = $request->telefone;
-        $cliente-> profissao = $request->profissao;
+        $cliente->nome = $request->nome;
+        $cliente->cpf = $request->cpf;
+        $cliente->email = $request->email;
+        $cliente->nacionalidade = $request->nacionalidade;
+        $cliente->endereco_id = $request->endereco_id;
+        $cliente->telefone = $request->telefone;
+        $cliente->profissao = $request->profissao;
 
-        $endereco-> cidade = $request-> cidade;//testeeeee
+        //$endereco-> cidade = $request-> cidade;//testeeeee
 
-        $cliente-> endereco = $endereco;//testeeee
+        //$cliente-> endereco = $endereco;//testeeee
 
         /**
          * SALVAR OS DADOS PEGOS DA VIEW NO BANCO
@@ -68,7 +71,8 @@ class ClienteController extends Controller
     /**
      * FUNÇÃO PARA EXIBIR DADOS DO CLIENTE FILTRANDO POR ID E ENDEREÇO RESGATADOS DO BANCO
      */
-    public function show($id){
+    public function show($id)
+    {
         $cliente = Cliente::findOrFail($id);
         $endereco = Endereco::findOrFail($id);
         return view('cliente.show', ['cliente' => $cliente, 'endereco' => $endereco]);
