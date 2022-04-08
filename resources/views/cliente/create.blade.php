@@ -29,11 +29,17 @@
             </div>
             <div class="form-group">
                 <label for="title">Endereço:</label>
-                <input type="text" class="form-control" id="endereco_id" name="endereco_id" placeholder="Endereço do Cliente">
+                <select name="status_civil" id="inp-status_civil" class="form-control">
+                    <option value="" selected>Selecione...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+                <!--<input type="text" class="form-control" id="endereco_id" name="endereco_id" placeholder="Endereço do Cliente">-->
             </div>
             <div class="form-group">
                 <label for="title">Telefone:</label>
-                <input type="text" class="form-control" id="telefone_id" name="telefone_id" placeholder="Telefone do Cliente">
+                <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone do Cliente">
             </div>
             <div class="form-group">
                 <label for="title">Profissão:</label>

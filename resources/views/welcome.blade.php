@@ -10,8 +10,8 @@
     <div id="search-container" class="col-md-12">
         <h1>Home</h1>
         <div class="campo">
-        <form action="">
-            <input type="text" name="" id="search" class="form-control" placeholder="Busque um Cliente">
+        <form action="/" method="GET">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Busque um Cliente">
             <input type="submit" id="botao-pesquisar" class="btn btn-primary" value="Buscar">
         </form>
         </div>
@@ -22,13 +22,14 @@
             @foreach ($cliente as $cliente)
                 <div class="card col-md-2">
                     <div class="card-body">
-                        <p>Nome: {{ $cliente-> nome }}</p>
+                        <p>Cliente: {{ $cliente-> nome }}</p>
                         <p>CPF: {{ $cliente-> cpf }}</p>
-                        <p>Email: {{ $cliente-> email }}</p>
+                        <!--<p>Email: {{-- $cliente-> email }}</p>
                         <p>Nacionalidade: {{ $cliente-> nacionalidade }}</p>
                         <p>Endereço: {{ $cliente-> endereco_id }}</p>
-                        <p>Telefone: {{ $cliente-> telefone_id }}</p>
-                        <p>Profissão: {{ $cliente-> profissao }}</p>
+                        <p>Telefone: {{ $cliente-> telefone }}</p>
+                        <p>Profissão: {{ $cliente-> profissao --}}</p>-->
+                        <a href="/cliente/{{ $cliente->id }}" class="btn btn-primary">Ver Mais</a>
                     </div>
                 </div>
             @endforeach

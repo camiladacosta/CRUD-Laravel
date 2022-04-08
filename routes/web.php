@@ -20,24 +20,22 @@ use App\Http\Controllers\TelefoneController;
 
 //ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
+
+/**
+ * create -> MÉTODO/ACTION PADRÃO PARA INSERIR OS DADOS NO BANCO
+ */
 Route::get('/cliente/create', [ClienteController::class, 'create']);
-
-/**
- * ENDEREÇO
- */
 Route::get('/endereco/create', [EnderecoController::class, 'create']);
-
-/**
- * TELEFONE
- */
-Route::get('/telefone/create', [TelefoneController::class, 'create']);
 
 /**
  * store -> MÉTODO/ACTION PADRÃO PARA ADICIONAR OS DADOS NO BANCO
  */
 Route::post('cliente/', [ClienteController::class, 'store']);
 Route::post('endereco/', [EnderecoController::class, 'store']);
-Route::post('telefone/', [TelefoneController::class, 'store']);
+
+/** show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS */
+Route::get('/cliente/{id}', [ClienteController::class, 'show']);
+Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 
 Route::get('/listar', function () {
     return view('listar');

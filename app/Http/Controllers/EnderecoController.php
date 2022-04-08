@@ -8,8 +8,12 @@ use App\Models\Endereco;
 class EnderecoController extends Controller
 {
     public function index(){
-        $endereco = Endereco::all();
-
+        $search = request('search');
+        if($search){
+            $endereco = Endereco::where(['id','like','%'.$search.'%'])->get();//get para pegar o registo
+        }else{
+            $endereco = Endereco::all();
+        }
         /**
          * ENVIANDO PARA A VIEW / = 'listar' TODOS OS ENDEREÇOS DO BANCO
          */
@@ -44,4 +48,10 @@ class EnderecoController extends Controller
 
         return redirect('/')->with('msg', 'Endereço Cadastrado com Sucesso!');
     }
+
+    public function show($id){
+        $endereco = Endereco::findOrFail($id);
+        return view('endereco.show', ['endereco' => $endereco]);
+    }
+
 }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("cpf");
             $table->string("email");
             $table->string("nacionalidade");
+            $table->string("telefone");
             //$table->string("endereco");
             //$table->foreignId("endereco_id")->constrained();
             $table->string("profissao");

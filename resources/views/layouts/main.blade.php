@@ -20,28 +20,20 @@
                         <li class="nav-item">
                             <a href="/" class="nav-link">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Dropdown link
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="/">Action</a>
-                              <a class="dropdown-item" href="/">Another action</a>
-                              <a class="dropdown-item" href="/">Something else here</a>
-                            </div>
-                          </li>
                         <li class="nav-item">
                             <a href="/cliente/create" class="nav-link">Novo Cliente</a>
                         </li>
                         <li class="nav-item">
                             <a href="/endereco/create" class="nav-link">Novo Endereço</a>
                         </li>
+                        <!--
                         <li class="nav-item">
-                            <a href="/telefone/create" class="nav-link">Novo Telefone</a>
+                            <a href="/endereco/{{-- $endereco->id --}}" class="nav-link">Listar Endereços</a>
                         </li>
+
                         <li class="nav-item">
                             <a href="/listar/1" class="nav-link">Listar ID</a>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
