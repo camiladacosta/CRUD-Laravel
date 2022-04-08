@@ -6,7 +6,15 @@
 
 {{-- selectiona o paramentro de content, dentro da section até o final --}}
 @section('content')
-
+    <div id="search-container" class="col-md-12">
+        <div class="campo">
+            <form action="/produto/showall" method="GET">
+                <label for="text">Busque Produtos</label>
+                <input type="text" name="search" id="search" class="form-control" placeholder="Busque um Produto">
+                <input type="submit" id="botao-pesquisar" class="btn btn-primary" value="Buscar">
+            </form>
+        </div>
+    </div>
     <div id="produtos-container" class="col-md-12">
         <h2>Lista de Produtos</h2>
         <div id="cards-container" class="row">

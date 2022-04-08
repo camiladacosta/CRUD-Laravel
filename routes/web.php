@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
+use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
 
 
 //ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
 Route::get('/produto/showall', [ProdutoController::class, 'showall']);
+Route::get('/orcamento/showall', [OrcamentoController::class, 'showall']);
 
 /**
  * create -> MÉTODO/ACTION PADRÃO PARA INSERIR OS DADOS NO BANCO
@@ -28,6 +30,7 @@ Route::get('/produto/showall', [ProdutoController::class, 'showall']);
 Route::get('/cliente/create', [ClienteController::class, 'create']);
 Route::get('/endereco/create', [EnderecoController::class, 'create']);
 Route::get('/produto/create', [ProdutoController::class, 'create']);
+Route::get('/orcamento/create', [OrcamentoController::class, 'create']);
 
 /**
  * store -> MÉTODO/ACTION PADRÃO PARA ADICIONAR OS DADOS NO BANCO

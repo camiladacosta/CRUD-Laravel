@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Orcamento extends Model
 {
     use HasFactory;
+
+    protected $data = ['date'];
 }

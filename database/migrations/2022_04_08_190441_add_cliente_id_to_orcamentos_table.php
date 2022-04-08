@@ -13,12 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orcamentos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-            $table->string("situacao");
-            $table->float("valortotal");
-            $table->dateTime("data");
+        Schema::table('orcamentos', function (Blueprint $table) {
+            //
         });
     }
 
@@ -29,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orcamento');
+        Schema::table('orcamentos', function (Blueprint $table) {
+            //
+        });
     }
 };
