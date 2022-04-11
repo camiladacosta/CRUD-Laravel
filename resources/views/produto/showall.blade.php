@@ -16,7 +16,11 @@
         </div>
     </div>
     <div id="produtos-container" class="col-md-12">
-        <h2>Lista de Produtos</h2>
+        @if ($search)
+            <h2>Buscando por: {{ $seacrh }}</h2>
+        @else
+            <h2>Lista de Produtos</h2>
+        @endif
         <div id="cards-container" class="row">
             <div id="cards-container" class="row">
                 @foreach ($produto as $produto)

@@ -21,7 +21,7 @@ class ProdutoController extends Controller
         }
         $produto = Produto::all();
 
-        return view('produto/showall', ['produto' => $produto]);
+        return view('produto/showall', ['produto' => $produto, 'search' => $search]);
     }
 
     public function create()
