@@ -10,16 +10,12 @@ class ProdutoController extends Controller
 
     public function showall()
     {
-        /**
-         * Pesquisar por id
-         */
         $search = request('search');
         if ($search) {
             $produto = Produto::where('descricao', 'like', '%' . $search . '%')->get(); //get para pegar o registo
         } else {
             $produto = Produto::all();
         }
-        $produto = Produto::all();
 
         return view('produto/showall', ['produto' => $produto, 'search' => $search]);
     }
@@ -40,7 +36,7 @@ class ProdutoController extends Controller
         $produto->valor = $request->valor;
 
         $produto->save();
-        return redirect('/produto/showall')->with('msg', 'Cliente Cadastrado com Sucesso!');
+        return redirect('/produto/showall')->with('msg', 'Produto Cadastrado !!!');
     }
 
     public function show($id)
@@ -53,6 +49,19 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         Produto::findOrFail($id)->delete();
-        return redirect('/produto/showall')->with('msg', 'Evento excluido');
+        return redirect('/produto/showall')->with('msg', 'Produto excluido !!!');
+    }
+
+    /*Método Update*/
+    public function edit($id)
+    {
+        $produto = Produto::findOrFail($id);
+        return view('produto.edit', ['produto' => $produto]);
+    }
+
+    public function update(Request $request)
+    {
+        Produto::findOrFail($request->id)->update($request->all());
+        return redirect('/produto/showall')->with('msg', 'Produto Editado !!!');
     }
 }

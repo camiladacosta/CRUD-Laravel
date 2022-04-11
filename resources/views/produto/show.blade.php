@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 {{-- selecione "CRUD" como parâmetro de title --}}
-@section('title', 'CRUD')
+@section('title', 'Produto ' . $produto->descricao)
 
 {{-- selectiona o paramentro de content, dentro da section até o final --}}
 @section('content')
@@ -17,5 +17,11 @@
                 <p>Valor: {{ $produto->valor }}</p>
             </div>
         </div>
+        <a href="/produto/edit/{{ $produto->id }}" class="btn btn-info edit-btn">Update</a>
+        <form action="/produto/{{ $produto->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger delete-btn">Delete</button>
+        </form>
     </div>
 @endsection

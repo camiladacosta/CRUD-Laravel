@@ -17,7 +17,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
-
+use App\Models\Produto;
 
 //ROTAS DAS REQUISIÇÕES
 Route::get('/', [ClienteController::class, 'index']);
@@ -47,9 +47,23 @@ Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 
 /**
- * show -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
+ * delete -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
  */
-Route::delete('/produto{id}', [ProdutoController::class, 'destroy']);
+Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
+
+
+/**
+ * update -> MÉTODO/ACTION PADRÃO PARA Atualizar OS DADOS DAS TABELAS
+ */
+Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
+Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
+
+
+
+
+
+
+
 
 Route::get('/listar', function () {
     return view('listar');

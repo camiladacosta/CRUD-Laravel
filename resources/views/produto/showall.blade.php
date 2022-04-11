@@ -2,7 +2,7 @@
 @extends('layouts.main')
 
 {{-- selecione "CRUD" como parâmetro de title --}}
-@section('title', 'CRUD')
+@section('title', 'Produtos')
 
 {{-- selectiona o paramentro de content, dentro da section até o final --}}
 @section('content')
@@ -17,7 +17,7 @@
     </div>
     <div id="produtos-container" class="col-md-12">
         @if ($search)
-            <h2>Buscando por: {{ $seacrh }}</h2>
+            <h2>Buscando por: {{ $search }}</h2>
         @else
             <h2>Lista de Produtos</h2>
         @endif
@@ -32,6 +32,6 @@
                 @endforeach
             </div>
         </div>
+        <a href="/produto/create" class="btn btn-primary">Novo Produto</a>
     </div>
-    <a href="/produto/create" class="btn btn-primary">Novo Produto</a>
 @endsection
