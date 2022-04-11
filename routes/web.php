@@ -38,6 +38,7 @@ Route::get('/orcamento/create', [OrcamentoController::class, 'create']);
 Route::post('cliente/', [ClienteController::class, 'store']);
 Route::post('endereco/', [EnderecoController::class, 'store']);
 Route::post('produto/', [ProdutoController::class, 'store']);
+Route::post('orcamento/', [OrcamentoController::class, 'store']);
 
 /**
  * show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS
@@ -45,6 +46,7 @@ Route::post('produto/', [ProdutoController::class, 'store']);
 Route::get('/cliente/{id}', [ClienteController::class, 'show']);
 Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
+Route::get('/orcamento/{id}', [OrcamentoController::class, 'show']);
 
 /**
  * delete -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
@@ -58,10 +60,7 @@ Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
 Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
 Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
 
-
-
-
-
+Route::post('/orcamento/show/{ido, idp}', [OrcamentoController::class, 'novop']);
 
 
 

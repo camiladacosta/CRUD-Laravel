@@ -11,8 +11,13 @@ class Orcamento extends Model
 
     protected $data = ['date'];
 
-    public function user()
+    public function cliente()
     {
         return $this->belongsTo('App\Models\Cliente');
+    }
+
+    public function produtos()
+    {
+        return $this->belongsToMany('App\Models\Produto');
     }
 }
