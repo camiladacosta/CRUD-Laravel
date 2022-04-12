@@ -43,11 +43,4 @@ class OrcamentoController extends Controller
         $o = Orcamento::findOrFail($id);
         return view('orcamento.show', ['orcamento' => $o, 'produto' => $p]);
     }
-
-    public function novop($idp, $ido)
-    {
-        $orcamento = Orcamento::findOrFail($ido);
-        $orcamento->orcamentos()->attach($idp);
-        return view('orcamento.show')->with('msg', 'Item Adicionado !!!');
-    }
 }
