@@ -106,3 +106,12 @@ footer{
 footer p{
     margin: 0;
 }
+#orcamento_id{
+    background:transparent;
+    border:none;
+    outline:none;
+    display:block;
+    height:0px;
+    width:0px;
+    cursor:pointer;
+}

@@ -17,6 +17,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\OrcamentoProdutoController;
 use App\Models\Produto;
 
 //ROTAS DAS REQUISIÇÕES
@@ -40,6 +41,10 @@ Route::post('endereco/', [EnderecoController::class, 'store']);
 Route::post('produto/', [ProdutoController::class, 'store']);
 Route::post('orcamento/', [OrcamentoController::class, 'store']);
 
+
+Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
+Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
+
 /**
  * show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS
  */
@@ -48,10 +53,14 @@ Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 Route::get('/orcamento/{id}', [OrcamentoController::class, 'show']);
 
+
+Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'edit']);
+
 /**
  * delete -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
  */
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
+Route::delete('/orcamento/{id}', [OrcamentoController::class, 'destroy']);
 
 
 /**
@@ -59,9 +68,6 @@ Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
  */
 Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
 Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
-
-Route::post('/orcamento/show/{ido, idp}', [OrcamentoController::class, 'novop']);
-
 
 
 Route::get('/listar', function () {

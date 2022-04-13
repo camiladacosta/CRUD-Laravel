@@ -11,8 +11,8 @@ class Produto extends Model
 
     protected $guarded = [];
 
-    public function orcamentos()
+    public function orcamentosDoProduto()
     {
-        return $this->belongsToMany('App\Models\Orcamento');
+        return $this->belongsToMany(Orcamento::class, 'orcamento_produtos');
     }
 }

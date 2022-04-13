@@ -7,29 +7,39 @@
 {{-- selectiona o paramentro de content, dentro da section até o final --}}
 @section('content')
 
-    <div class="col-md-12">
-        <div id="cards-container" class="row">
-            <div id="card-container" class="col-md-4">
-                <h2>Orçamento de {{ $orcamento->cliente->nome }}</h2>
-                <p>Situacao: {{ $orcamento->situacao }}</p>
-                <p class="card-date">Data: {{ date('d/m/Y', strtotime($orcamento->data)) }}</p>
-            </div>
+    <div class="col-md-6 offset-md-3 mt-3">
+        <div class="form-group">
+            <h1>Orçamento de {{ $orcamento->cliente->nome }}</h1>
+            <p>Situação do orçamento: {{ $orcamento->situacao }}</p>
+            <p class="card-date">Data do orçamento: {{ date('d/m/Y', strtotime($orcamento->data)) }}</p>
+            <select name="orcamento_id" id="orcamento_id">
+                <option value={{ $orcamento->id }}></option>
+            </select>
+            <label for="list">Produtos do Orçamento:</label>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Produto</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($pdo as $op)
+                        <tr>
+                            <td>{{ $op->descricao }}</td>
+                            <td>{{ $op->valor }}</td>
+                            <td>{{ $op->unidade }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-
-    </div>
-
-    <div class="col-md-10">
-        <h4>Todos os Produtos</h4>
-        <label for="cards-container">Selecione o Produto</label>
-        <ul class="list-group">
-            @foreach ($produto as $produto)
-                <form action="/orcamento/novop/{{ $orcamento->id, $produto->id }}" method="POST">
-                    <a href="/orcamento/novop/{{ $orcamento->id, $produto->id }}"
-                        class="list-group-item list-group-item-action" id="orcamento-submit" onclick="event.preventDefault();
-                                this.closest('form').submit();">
-                        Produto: {{ $produto->descricao }} Valor: {{ $produto->valor }}</a>
-                </form>
-            @endforeach
-        </ul>
+        <input type="submit" class="btn btn-primary" value="Update">
+        <form action="/orcamento/{{ $orcamento->id }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <input type="submit" class="btn btn-danger delete-btn" value="Delete">
+        </form>
     </div>
 @endsection

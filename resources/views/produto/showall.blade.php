@@ -21,6 +21,7 @@
         @else
             <h2>Lista de Produtos</h2>
         @endif
+        <a href="/produto/create" class="btn btn-primary">Novo Produto</a>
         <div id="cards-container" class="row">
             <div id="cards-container" class="row">
                 @foreach ($produto as $produto)
@@ -32,6 +33,5 @@
                 @endforeach
             </div>
         </div>
-        <a href="/produto/create" class="btn btn-primary">Novo Produto</a>
     </div>
 @endsection
