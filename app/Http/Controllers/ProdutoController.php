@@ -7,10 +7,6 @@ use App\Models\Produto;
 
 class ProdutoController extends Controller
 {
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     public function showall()
     {
         $search = request('search');
@@ -67,8 +63,4 @@ class ProdutoController extends Controller
         Produto::findOrFail($request->id)->update($request->all());
         return redirect('/produto/showall')->with('msg', 'Produto Editado !!!');
     }
-<<<<<<< HEAD
-    /*Método Update*/
-=======
->>>>>>> main
 }

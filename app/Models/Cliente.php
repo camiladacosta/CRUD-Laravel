@@ -13,18 +13,7 @@ class Cliente extends Model
     // protected $table = "cliente";
     use HasFactory;
 
-<<<<<<< HEAD
-    // public function endereco(){
-    //     return $this->belongsTo('App\Model\Endereco');
-    // }
-
-    public function orcamentos()
-    {
-        return $this->hasMany('App\Models\Orcamentos');
-    }
-=======
     public function endereco(){
          return $this->belongsTo('App\Models\Endereco');
      }
->>>>>>> main
 }

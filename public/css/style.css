@@ -106,10 +106,6 @@ footer{
 footer p{
     margin: 0;
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> main
 #orcamento_id{
     background:transparent;
     border:none;
@@ -119,12 +115,9 @@ footer p{
     width:0px;
     cursor:pointer;
 }
-<<<<<<< HEAD
-=======
 
 .card-body{
     border: 1px solid rgb(238, 238, 238);
     margin-left:20px;border-radius:5px;
     background-color:rgb(238, 238, 238);
 }
->>>>>>> main
