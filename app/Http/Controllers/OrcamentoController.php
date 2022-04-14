@@ -38,13 +38,7 @@ class OrcamentoController extends Controller
         return redirect('/orcamento/showall')->with('msg', 'Orçamento Cadastrado !!!');
     }
 
-    public function edit($id)
-    {
-        $p = Produto::all();
-        $o = Orcamento::findOrFail($id);
-        $pdo = $o->produtosDoOrcamento;
-        return view('orcamento.add', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
-    }
+
 
     public function show($id)
     {
@@ -52,6 +46,14 @@ class OrcamentoController extends Controller
         $o = Orcamento::findOrFail($id);
         $pdo = $o->produtosDoOrcamento;
         return view('orcamento.show', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
+    }
+
+    public function add($id)
+    {
+        $p = Produto::all();
+        $o = Orcamento::findOrFail($id);
+        $pdo = $o->produtosDoOrcamento;
+        return view('orcamento.add', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
     }
 
     public function addp(Request $r)
@@ -71,6 +73,19 @@ class OrcamentoController extends Controller
     public function destroy($id)
     {
         Orcamento::findOrFail($id)->delete();
-        return redirect('/orcamento/showall')->with('msg', 'Produto excluido !!!');
+        return redirect('/orcamento/showall')->with('msg', 'Orçamento excluido !!!');
+    }
+
+    public function edit($id)
+    {
+        $orcamento = Orcamento::findOrFail($id);
+        $clientes = Cliente::all();
+        return view('orcamento.edit', ['orcamento' => $orcamento, 'clientes' => $clientes]);
+    }
+
+    public function update(Request $request)
+    {
+        Orcamento::findOrFail($request->id)->update($request->all());
+        return redirect('/orcamento/showall')->with('msg', 'Orçamento Editado !!!');
     }
 }

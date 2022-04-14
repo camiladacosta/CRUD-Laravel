@@ -35,7 +35,7 @@
                 </tbody>
             </table>
         </div>
-        <input type="submit" class="btn btn-primary" value="Update">
+        <a href="/orcamento/edit/{{ $orcamento->id }}" class="btn btn-primary edit-btn">Update</a>
         <form action="/orcamento/{{ $orcamento->id }}" method="POST">
             @csrf
             @method('DELETE')

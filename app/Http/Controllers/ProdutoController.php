@@ -64,4 +64,5 @@ class ProdutoController extends Controller
         Produto::findOrFail($request->id)->update($request->all());
         return redirect('/produto/showall')->with('msg', 'Produto Editado !!!');
     }
+    /*Método Update*/
 }

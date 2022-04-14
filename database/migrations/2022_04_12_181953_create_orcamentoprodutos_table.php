@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('orcamento_produtos', function (Blueprint $table) {
             $table->timestamps();
-            $table->foreignId('produto_id')->constrained();
-            $table->foreignId('orcamento_id')->constrained();
+            $table->foreignId('produto_id')->constrained()->onDelete('cascade');
+            $table->foreignId('orcamento_id')->constrained()->onDelete('cascade');
         });
     }
 

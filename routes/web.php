@@ -42,6 +42,7 @@ Route::post('produto/', [ProdutoController::class, 'store']);
 Route::post('orcamento/', [OrcamentoController::class, 'store']);
 
 
+Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
 Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
 Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
 
@@ -54,7 +55,6 @@ Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 Route::get('/orcamento/{id}', [OrcamentoController::class, 'show']);
 
 
-Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'edit']);
 
 /**
  * delete -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
@@ -68,6 +68,8 @@ Route::delete('/orcamento/{id}', [OrcamentoController::class, 'destroy']);
  */
 Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
 Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
+Route::get('/orcamento/edit/{id}', [OrcamentoController::class, 'edit']);
+Route::put('/orcamento/update/{id}', [OrcamentoController::class, 'update']);
 
 
 Route::get('/listar', function () {

@@ -34,11 +34,7 @@
                                 <td>{{ $op->valor }}</td>
                                 <td>{{ $op->unidade }}</td>
                                 <td>
-                                    <form action="orcamento/remove" method="POST">
-                                        @csrf
-                                        @method("DELETE")
-                                        <input type="submit" class="btn btn-danger delete-btn float-right" value="Delete">
-                                    </form>
+                                    <input type="submit" class="btn btn-danger delete-btn float-right" value="Delete">
                                 </td>
                             </tr>
                         @endforeach
