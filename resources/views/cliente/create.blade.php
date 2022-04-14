@@ -8,7 +8,7 @@
 @section('content')
     {{-- PÁGINA DE CADASTRO DE CLIENTE --}}
     <div id="criar-cliente-container" class="col-md-6 offset-md-3">
-        <h1>Cadastrar Cliente</h1>
+        <h3>Cadastrar Cliente</h3>
         <form action="/cliente" method="POST">
             @csrf {{-- DIRETIVA DO BLADE PARA PERMITIR ADICIONAR DADOS NO BANCO --}}
             <div class="form-group">
@@ -28,22 +28,21 @@
                 <input type="text" class="form-control" id="nacionalidade" name="nacionalidade" placeholder="Nacionalidade do Cliente">
             </div>
             <div class="form-group">
-                <label for="title">Endereço:</label>
-                <select name="status_civil" id="inp-status_civil" class="form-control">
-                    <option value="" selected>Selecione...</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <!--<input type="text" class="form-control" id="endereco_id" name="endereco_id" placeholder="Endereço do Cliente">-->
-            </div>
-            <div class="form-group">
                 <label for="title">Telefone:</label>
                 <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone do Cliente">
             </div>
             <div class="form-group">
                 <label for="title">Profissão:</label>
                 <input type="text" class="form-control" id="profissao" name="profissao" placeholder="Profissão do Cliente">
+            </div>
+            <div class="form-group">
+                <label for="endereco">Selecione o Endereco deste Cliente</label>
+                <select name="endereco_id" id="endereco_id" class="form-control">
+                    <option value="" selected disabled hidden>Selecione...</option>
+                    @foreach ($endereco as $e)
+                        <option value="{{ $e->id }}"> ID: {{ $e->id }} | {{ $e->logradouro }} | {{ $e->cidade }} | {{ $e->estado }}</option>
+                    @endforeach
+                </select>
             </div>
             <input type="submit" class="btn btn-primary" value="Cadastrar">
         </form>

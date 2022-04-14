@@ -15,6 +15,7 @@
             </form>
         </div>
     </div>
+<<<<<<< HEAD
     <div id="produtos-container" class="col-md-12">
         @if ($search)
             <h2>Buscando por: {{ $search }}</h2>
@@ -22,13 +23,25 @@
             <h2>Lista de Produtos</h2>
         @endif
         <a href="/produto/create" class="btn btn-primary">Novo Produto</a>
+=======
+    <div id="lista-container" class="col-md-12">
+        @if ($search)
+            <h2>Buscando por: {{ $search }}</h2>
+        @else
+            <h2>Lista de Produtos | <a href="/produto/create" class="btn btn-dark">Cadastrar Novo</a></h2>
+        @endif
+>>>>>>> main
         <div id="cards-container" class="row">
             <div id="cards-container" class="row">
                 @foreach ($produto as $produto)
                     <div class="card-body">
                         <p>Produto: {{ $produto->descricao }}</p>
                         <p>Preço: {{ $produto->valor }}</p>
+<<<<<<< HEAD
                         <a href="/produto/{{ $produto->id }}" class="btn btn-primary">Ver Mais</a>
+=======
+                        <a href="/produto/{{ $produto->id }}" class="btn btn-info">Ver Mais</a>
+>>>>>>> main
                     </div>
                 @endforeach
             </div>

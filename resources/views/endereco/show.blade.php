@@ -7,9 +7,19 @@
 {{-- selectiona o paramentro de content, dentro da section até o final--}}
 @section('content')
 
-    <h1>Endereços</h1>
-    <p>{{ $endereco -> bairro }}</p>
-    <p>{{ $endereco -> cidade }}</p>
-    <p>{{ $endereco -> estado }}</p>
+    <div class="col-md-10 offset-md-1">
+        <div class="row">
+            <div id="info-container" class="col-md-4">
+                <h2>IDENTIFICADOR: {{ $endereco -> id }}</h2>
+                <p>CEP: {{ $endereco-> cep }}</p>
+                <p>Logradouro: {{ $endereco-> logradouro }}</p>
+                <p>Nº: {{ $endereco-> numero }}</p>
+                <p>Complemento: {{ $endereco-> complemento }}</p>
+                <p>Bairro: {{ $endereco-> bairro }}</p>
+                <p>Cidade: {{ $endereco-> cidade }}</p>
+                <p>Estado: {{ $endereco-> estado }}</p>
+            </div>
+        </div>
+    </div>
 
 @endsection

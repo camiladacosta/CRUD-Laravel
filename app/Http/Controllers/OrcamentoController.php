@@ -2,19 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cliente;
-use App\Models\Orcamento;
-use App\Models\OrcamentoProduto;
-use App\Models\Produto;
 use Illuminate\Http\Request;
+use App\Models\Cliente;
+use App\Models\Produto;
+use App\Models\Orcamento;
 
 class OrcamentoController extends Controller
 {
     public function showall()
     {
-        $orcamento = Orcamento::all();
+        $cliente = Cliente::all()->toArray();
+        $search = request('search');
+        if ($search) {
+            $orcamento = Orcamento::where('data', 'like', '%' . $search . '%') //BUSCA PELA DATA
+                ->orWhere('situacao', 'like', '%' . $search . '%') //BUSCA PELA SITUAÇÃO *PROBLEMA: Ativo volta todos*
+                ->orWhere('valorTotal', 'like', '%' . $search . '%') //BUSCA PELO VALOR TOTAL
 
-        return view('orcamento/showall', ['orcamento' => $orcamento]);
+                /**
+                 * RETORNA ARRAY COM TODOS OS NOMES DOS CLIENTES - ERRO DE SINTAXE -
+                 */
+                //->orWhere( $cliente, 'nome', 'like', '%' . $search . '%') //BUSCA PELO NOME
+
+
+                ->get(); //GET PARA RESGATAR DE FATO O CAMPO NO BD
+        } else {
+            $orcamento = Orcamento::all();
+        }
+
+        return view('orcamento/showall', ['orcamento' => $orcamento, 'search' => $search]);
     }
 
     public function create()

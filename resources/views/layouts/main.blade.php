@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <!-- CSS - pasta public-->
@@ -36,9 +37,34 @@
                         <a href="/endereco/create" class="nav-link">Novo Endereço</a>
                     </li>
                     <!--
+=======
+        <title>@yield('title')</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="collapse navbar-collapse" id="navbar">
+                    <a href="/" class="navbar-brand">
+                        <img src="/img/logo.png" alt="logo" width="40px">
+                    </a>
+                    <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/endereco/{{-- $endereco->id --}}" class="nav-link">Listar Endereços</a>
+                            <a href="/" class="nav-link">Clientes</a><!--antiga home-->
                         </li>
+                        <!--<li class="nav-item">
+                            <a href="/cliente/showall" class="nav-link">Clientes</a>
+                        </li>-->
+                        <li class="nav-item">
+                            <a href="/endereco/showall" class="nav-link">Endereços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/produto/showall" class="nav-link">Produtos</a>
+                        </li>
+>>>>>>> main
+                        <li class="nav-item">
+                            <a href="/orcamento/showall" class="nav-link">Orçamentos</a>
+                        </li>
+<<<<<<< HEAD
 
                         <li class="nav-item">
                             <a href="/listar/1" class="nav-link">Listar ID</a>
@@ -47,6 +73,12 @@
             </div>
         </nav>
     </header>
+=======
+                    </ul>
+                </div>
+            </nav>
+        </header>
+>>>>>>> main
 
     <main>
         <div class="container-fluid">

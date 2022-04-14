@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
+<<<<<<< HEAD
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\OrcamentoProdutoController;
@@ -24,6 +25,20 @@ use App\Models\Produto;
 Route::get('/', [ClienteController::class, 'index']);
 Route::get('/produto/showall', [ProdutoController::class, 'showall']);
 Route::get('/orcamento/showall', [OrcamentoController::class, 'showall']);
+=======
+use App\Http\Controllers\TelefoneController;
+use App\Http\Controllers\OrcamentoController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\OrcamentoProdutoController;
+
+//ROTAS DAS REQUISIÇÕES
+//Route::get('/', [ClienteController::class, 'index']);
+Route::get('/', [ClienteController::class, 'showall']);
+Route::get('/produto/showall', [ProdutoController::class, 'showall']);
+Route::get('/orcamento/showall', [OrcamentoController::class, 'showall']);
+Route::get('/cliente/showall', [ClienteController::class, 'showall']);
+Route::get('/endereco/showall', [EnderecoController::class, 'showall']);
+>>>>>>> main
 
 /**
  * create -> MÉTODO/ACTION PADRÃO PARA INSERIR OS DADOS NO BANCO
@@ -41,6 +56,11 @@ Route::post('endereco/', [EnderecoController::class, 'store']);
 Route::post('produto/', [ProdutoController::class, 'store']);
 Route::post('orcamento/', [OrcamentoController::class, 'store']);
 
+<<<<<<< HEAD
+=======
+Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
+Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
+>>>>>>> main
 
 Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
 Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
@@ -54,7 +74,11 @@ Route::get('/endereco/{id}', [EnderecoController::class, 'show']);
 Route::get('/produto/{id}', [ProdutoController::class, 'show']);
 Route::get('/orcamento/{id}', [OrcamentoController::class, 'show']);
 
+<<<<<<< HEAD
 
+=======
+Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'edit']);
+>>>>>>> main
 
 /**
  * delete -> MÉTODO/ACTION PADRÃO PARA DELETAR OS DADOS DAS TABELAS
@@ -62,6 +86,7 @@ Route::get('/orcamento/{id}', [OrcamentoController::class, 'show']);
 Route::delete('/produto/{id}', [ProdutoController::class, 'destroy']);
 Route::delete('/orcamento/{id}', [OrcamentoController::class, 'destroy']);
 
+<<<<<<< HEAD
 
 /**
  * update -> MÉTODO/ACTION PADRÃO PARA Atualizar OS DADOS DAS TABELAS
@@ -71,13 +96,21 @@ Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
 Route::get('/orcamento/edit/{id}', [OrcamentoController::class, 'edit']);
 Route::put('/orcamento/update/{id}', [OrcamentoController::class, 'update']);
 
+=======
+/**
+ * update -> MÉTODO/ACTION PADRÃO PARA ATUALIZAR OS DADOS DAS TABELAS
+ */
+Route::put('/produto/update/{id}', [ProdutoController::class, 'update']);
+Route::get('/produto/edit/{id}', [ProdutoController::class, 'edit']);
+>>>>>>> main
 
-Route::get('/listar', function () {
-    return view('listar');
-});
 
+<<<<<<< HEAD
 Route::get('/listar/{id}', function ($id) {
     return view('listarid', [
         'id' => $id
     ]);
 });
+=======
+//Route::post('/orcamento/show/{ido, idp}', [OrcamentoController::class, 'novop']);
+>>>>>>> main
