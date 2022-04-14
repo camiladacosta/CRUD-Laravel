@@ -11,9 +11,25 @@ class OrcamentoController extends Controller
 {
     public function showall()
     {
-        $orcamento = Orcamento::all();
+        $cliente = Cliente::all()->toArray();
+        $search = request('search');
+        if ($search) {
+            $orcamento = Orcamento::where('data', 'like', '%' . $search . '%') //BUSCA PELA DATA
+            ->orWhere('situacao', 'like', '%' . $search . '%')//BUSCA PELA SITUAÇÃO *PROBLEMA: Ativo volta todos*
+            ->orWhere('valorTotal', 'like', '%' . $search . '%')//BUSCA PELO VALOR TOTAL
 
-        return view('orcamento/showall', ['orcamento' => $orcamento]);
+            /**
+             * RETORNA ARRAY COM TODOS OS NOMES DOS CLIENTES - ERRO DE SINTAXE -
+             */
+            //->orWhere( $cliente, 'nome', 'like', '%' . $search . '%') //BUSCA PELO NOME
+
+
+            ->get(); //GET PARA RESGATAR DE FATO O CAMPO NO BD
+        } else {
+            $orcamento = Orcamento::all();
+        }
+
+        return view('orcamento/showall', ['orcamento' => $orcamento, 'search' => $search]);
     }
 
     public function create()
@@ -49,7 +65,8 @@ class OrcamentoController extends Controller
     {
         $p = Produto::all();
         $o = Orcamento::findOrFail($id);
-        return view('orcamento.show', ['orcamento' => $o, 'produto' => $p]);
+        $pdo = $o->produtosDoOrcamento;
+        return view('orcamento.show', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
     }
 
     public function addp(Request $r)

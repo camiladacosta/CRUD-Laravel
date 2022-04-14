@@ -19,7 +19,12 @@ class ClienteController extends Controller
         $endereco = request('endereco');
         $search = request('search');
         if ($search) {
-            $cliente = Cliente::where('nome', 'like', '%' . $search . '%')->get(); //get para pegar o registo
+            $cliente = Cliente::where('nome', 'like', '%' . $search . '%') //BUSCA PELO NOME
+            ->orWhere('cpf', 'like', '%' . $search . '%') //BUSCA PELO CPF
+           /**
+            * PESQUISAR POR MUNICIPIO E BAIRRO
+            */
+            ->get(); //get para pegar o registo
         } else {
             $cliente = Cliente::all();
         }

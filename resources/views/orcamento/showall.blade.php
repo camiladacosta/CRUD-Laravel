@@ -6,7 +6,16 @@
 {{-- selectiona o paramentro de content, dentro da section até o final --}}
 @section('content')
 
-    <div id="lista-container" class="col-md-12 mt-3">
+    <div id="search-container" class="col-md-12">
+        <div class="campo">
+            <form action="/orcamento/showall" method="GET">
+                <label for="text">Busque Por Orçamentos</label>
+                <input type="text" name="search" id="search" class="form-control" placeholder="Busque um Orçamento">
+                <input type="submit" id="botao-pesquisar" class="btn btn-primary" value="Buscar">
+            </form>
+        </div>
+    </div>
+    <div id="lista-container" class="col-md-12">
         <h2>Lista de Orçamentos | <a href="/orcamento/create" class="btn btn-dark">Cadastrar Novo</a></h2>
         <div id="cards-container" class="row">
             <div id="card-container" class="row">
