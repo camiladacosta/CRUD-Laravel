@@ -7,7 +7,7 @@
 {{-- selectiona o paramentro de content, dentro da section até o final--}}
 @section('content')
     {{-- PÁGINA DE CADASTRO DE CLIENTE --}}
-    <div id="criar-cliente-container" class="col-md-6 offset-md-3">
+    <div id="criar-endereco-container" class="col-md-6 offset-md-3">
         <h1>Cadastrar Endereço</h1>
         <form action="/endereco" method="POST">
             @csrf {{-- DIRETIVA DO BLADE PARA PERMITIR ADICIONAR DADOS NO BANCO --}}

@@ -7,17 +7,29 @@ use App\Models\Endereco;
 
 class EnderecoController extends Controller
 {
-    public function index(){
+    // public function index(){
+    //     $search = request('search');
+    //     if($search){
+    //         $endereco = Endereco::where(['id','like','%'.$search.'%'])->get();//get para pegar o registo
+    //     }else{
+    //         $endereco = Endereco::all();
+    //     }
+    //     /**
+    //      * ENVIANDO PARA A VIEW / = 'listar' TODOS OS ENDEREÇOS DO BANCO
+    //      */
+    //     return view('endereco',['endereco' => $endereco]);
+    // }
+
+    public function showall()
+    {
         $search = request('search');
-        if($search){
-            $endereco = Endereco::where(['id','like','%'.$search.'%'])->get();//get para pegar o registo
-        }else{
+        if ($search) {
+            $endereco = Endereco::where('id', 'like', '%' . $search . '%')->get(); //get para pegar o registo
+        } else {
             $endereco = Endereco::all();
         }
-        /**
-         * ENVIANDO PARA A VIEW / = 'listar' TODOS OS ENDEREÇOS DO BANCO
-         */
-        return view('listar',['endereco' => $endereco]);
+
+        return view('endereco/showall', ['endereco' => $endereco, 'search' => $search]);
     }
 
     /**
@@ -46,7 +58,7 @@ class EnderecoController extends Controller
          */
         $endereco->save();
 
-        return redirect('/')->with('msg', 'Endereço Cadastrado com Sucesso!');
+        return redirect('/endereco/showall')->with('msg', 'Endereço Cadastrado com Sucesso!');
     }
 
     public function show($id){

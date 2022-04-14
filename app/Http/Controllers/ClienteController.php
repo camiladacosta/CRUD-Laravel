@@ -9,30 +9,31 @@ use App\Controllers\EnderecoController;
 
 class ClienteController extends Controller
 {
+    //ROTA INDEX PARA DIRECIONAR PARA welcome.blade
     public function index(){
-        /**
-         * Pesquisar por id
-        */
-        $endereco = request('endereco');
+         return view('welcome');
+    }
 
+    public function showall()
+    {
+        $endereco = request('endereco');
         $search = request('search');
-        if($search){
-            $cliente = Cliente::where('nome','like','%'.$search.'%')->get();//get para pegar o registo
-        }else{
+        if ($search) {
+            $cliente = Cliente::where('nome', 'like', '%' . $search . '%')->get(); //get para pegar o registo
+        } else {
             $cliente = Cliente::all();
         }
 
-        /**
-         * ENVIANDO PARA A VIEW / = 'welcome' TODOS OS CLIENTES DO BANCO
-         */
-        return view('welcome',['cliente' => $cliente, 'search' => $search, 'endereco' => $endereco]);
+        return view('cliente/showall', ['cliente' => $cliente, 'search' => $search]);
     }
 
     /**
      * create-> MÉTODO/ACTION PADRÃO PARA CRIAR NOVO CAMPO (CLIENTE)
      */
     public function create(){
-        return view('cliente.create');
+        $endereco = Endereco::all();
+
+        return view('cliente.create', ['endereco' => $endereco]);
     }
 
     public function store(Request $request){
@@ -40,27 +41,19 @@ class ClienteController extends Controller
          * INSTANCIANDO A CLASSE Cliente DO MODEL
          */
         $cliente = new Cliente;
-        $endereco = new Endereco;
 
         $cliente-> nome = $request->nome;
         $cliente-> cpf = $request->cpf;
         $cliente-> email = $request->email;
         $cliente-> nacionalidade = $request->nacionalidade;
         $cliente-> endereco_id = $request->endereco_id;
+        //$cliente-> endereco_id = $endereco->id;
         $cliente-> telefone = $request->telefone;
         $cliente-> profissao = $request->profissao;
-
-        $endereco-> cidade = $request-> cidade;//testeeeee
-
-        $cliente-> endereco = $endereco;//testeeee
 
         /**
          * SALVAR OS DADOS PEGOS DA VIEW NO BANCO
          */
-        //cliente.set(endereco)
-
-
-
         $cliente->save();
 
         return redirect('/')->with('msg', 'Cliente Cadastrado com Sucesso!');
@@ -70,7 +63,9 @@ class ClienteController extends Controller
      */
     public function show($id){
         $cliente = Cliente::findOrFail($id);
-        $endereco = Endereco::findOrFail($id);
-        return view('cliente.show', ['cliente' => $cliente, 'endereco' => $endereco]);
+        //$endereco = Endereco::find($id); //RETORNA COM O ID DO ENDERECO REFERENTE AO ID DO CLIENTE E NÃO AO DADO PRESENTE NO BANCO
+        $endereco = Endereco::find($cliente->endereco_id);//RETORNA COM O ID DO ENDERECO REFERENTE AO CLIENTE
+        return view('cliente.show', ['cliente' => $cliente, 'endereco' => $endereco]);//só funciona se o id dos dois for igual
+        //return view('cliente.show', ['cliente' => $cliente]);
     }
 }

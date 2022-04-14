@@ -68,11 +68,11 @@ header{
 
 /* CLIENTES LIST */
 
-#clientes-container{
+#lista-container{
     padding: 50px;
 }
 
-#clientes-container h2{
+#lista-container h2{
     margin-bottom: 10px;
 }
 #cards-container .card{
@@ -96,4 +96,20 @@ footer{
 
 footer p{
     margin: 0;
+}
+
+#orcamento_id{
+    background:transparent;
+    border:none;
+    outline:none;
+    display:block;
+    height:0px;
+    width:0px;
+    cursor:pointer;
+}
+
+.card-body{
+    border: 1px solid rgb(238, 238, 238);
+    margin-left:20px;border-radius:5px;
+    background-color:rgb(238, 238, 238);
 }

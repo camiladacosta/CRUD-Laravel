@@ -18,22 +18,20 @@
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Home</a>
+                            <a href="/" class="nav-link">Clientes</a><!--antiga home-->
                         </li>
-                        <li class="nav-item">
-                            <a href="/cliente/create" class="nav-link">Novo Cliente</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/endereco/create" class="nav-link">Novo Endereço</a>
-                        </li>
-                        <!--
-                        <li class="nav-item">
-                            <a href="/endereco/{{-- $endereco->id --}}" class="nav-link">Listar Endereços</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="/listar/1" class="nav-link">Listar ID</a>
+                        <!--<li class="nav-item">
+                            <a href="/cliente/showall" class="nav-link">Clientes</a>
                         </li>-->
+                        <li class="nav-item">
+                            <a href="/endereco/showall" class="nav-link">Endereços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/produto/showall" class="nav-link">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/orcamento/showall" class="nav-link">Orçamentos</a>
+                        </li>
                     </ul>
                 </div>
             </nav>
