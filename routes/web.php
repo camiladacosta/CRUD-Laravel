@@ -46,9 +46,9 @@ Route::post('orcamento/', [OrcamentoController::class, 'store']);
 Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
 Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
 
-Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
-Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
-Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
+// Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
+// Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
+// Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
 
 /**
  * show -> MÉTODO/ACTION PADRÃO PARA EXIBIR OS DADOS DAS TABELAS

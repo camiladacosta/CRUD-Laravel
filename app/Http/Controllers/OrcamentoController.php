@@ -91,11 +91,12 @@ class OrcamentoController extends Controller
         return redirect('/orcamento/showall')->with('msg', 'Orçamento excluido !!!');
     }
 
-    public function edit($id)
+     public function edit($id)
     {
-        $orcamento = Orcamento::findOrFail($id);
-        $clientes = Cliente::all();
-        return view('orcamento.edit', ['orcamento' => $orcamento, 'clientes' => $clientes]);
+        $p = Produto::all();
+        $o = Orcamento::findOrFail($id);
+        $pdo = $o->produtosDoOrcamento;
+        return view('orcamento.add', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
     }
 
     public function update(Request $request)
