@@ -17,7 +17,6 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EnderecoController;
 use App\Http\Controllers\OrcamentoController;
 use App\Http\Controllers\ProdutoController;
-use App\Http\Controllers\OrcamentoProdutoController;
 
 //ROTAS DAS REQUISIÇÕES
 //Route::get('/', [ClienteController::class, 'index']);
@@ -46,7 +45,7 @@ Route::post('orcamento/', [OrcamentoController::class, 'store']);
 Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
 Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
 
-// Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
+Route::get('/orcamento/add/{id}', [OrcamentoController::class, 'add']);
 // Route::post('orcamento/add', [OrcamentoController::class, 'addp']);
 // Route::post('orcamento/remove', [OrcamentoController::class, 'removep']);
 

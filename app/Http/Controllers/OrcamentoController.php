@@ -35,9 +35,8 @@ class OrcamentoController extends Controller
     public function create()
     {
         $cliente = Cliente::all();
-        $produto = Produto::all();
 
-        return view('orcamento.create', ['cliente' => $cliente, 'produto' => $produto]);
+        return view('orcamento.create', ['cliente' => $cliente]);
     }
 
     public function store(Request $r)
@@ -53,22 +52,12 @@ class OrcamentoController extends Controller
         return redirect('/orcamento/showall')->with('msg', 'Orçamento Cadastrado !!!');
     }
 
-
-
     public function show($id)
     {
         $p = Produto::all();
         $o = Orcamento::findOrFail($id);
         $pdo = $o->produtosDoOrcamento;
         return view('orcamento.show', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
-    }
-
-    public function add($id)
-    {
-        $p = Produto::all();
-        $o = Orcamento::findOrFail($id);
-        $pdo = $o->produtosDoOrcamento;
-        return view('orcamento.add', ['orcamento' => $o, 'produto' => $p, 'pdo' => $pdo]);
     }
 
     public function addp(Request $r)
@@ -91,7 +80,7 @@ class OrcamentoController extends Controller
         return redirect('/orcamento/showall')->with('msg', 'Orçamento excluido !!!');
     }
 
-     public function edit($id)
+    public function edit($id)
     {
         $p = Produto::all();
         $o = Orcamento::findOrFail($id);
